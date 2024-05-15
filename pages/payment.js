@@ -8,6 +8,11 @@ exports.PaymentPage = class PaymentPage extends RekkariPage {
    */
   constructor(page) {
     super(page)
+    this.headerText = {
+      fi: 'Maksu',
+      sv: 'Betalning',
+      en: 'Payment'
+    }
     // Define locators for elements on the page
     this.regPlate = page.locator('#registration-plate')
     this.bundleName = page.locator('#summary-bundle-title')
@@ -55,7 +60,9 @@ exports.PaymentPage = class PaymentPage extends RekkariPage {
   }
 
   async payTheReport() {
+    // This methoid simulates the actual payment finalization, with the assumption that the payment
+    // is successful and that the next page to open is the vehicle report page.
     await expect(this.continueButton).toBeEnabled()
-    new VehicleReportPage(this.page).open()
+    await new VehicleReportPage(this.page).open({ language: this.lang })
   }
 }

@@ -8,6 +8,21 @@ exports.VehicleReportPage = class VehicleReportPage extends RekkariPage {
    */
   constructor(page) {
     super(page)
+    this.url = {
+      fi: 'https://02rekkari.fi/esimerkkiraportti/',
+      sv: 'https://02rekkari.fi/sv/exempelrapport/',
+      en: 'https://02rekkari.fi/en/example-search/'
+    }
+    this.headerText = {
+      fi: 'Esimerkkiraportti',
+      sv: 'Exempelrapport',
+      en: 'Example report'
+    }
+    this.currentOwnersHeaderText = {
+      fi: 'Nykyiset omistajat ja haltijat',
+      sv: 'Nuvarande ägare och innehavare',
+      en: 'Current owners and holders'
+    }
     // Define locators for elements on the page
     this.registrationPlate = page.locator('#registration-plate').first()
     this.vehicleData = (fieldTitle) =>
@@ -16,11 +31,11 @@ exports.VehicleReportPage = class VehicleReportPage extends RekkariPage {
           `.MuiGrid-item:has(> div:text("${fieldTitle}"),p:text("${fieldTitle}")) + .MuiGrid-item`
         )
         .first()
-    this.allCurrentOwners = page.locator(
-      'div:has(> :text("Nykyiset omistajat ja haltijat"))'
+    this.allCurrentOwners = (lang = this.lang) => page.locator(
+      `div:has(> :text("${this.currentOwnersHeaderText[lang]}"))`
     )
     this.currentOwner = (ownerType) =>
-      this.allCurrentOwners.locator(
+      this.allCurrentOwners().locator(
         `div.MuiGrid-container:has(:text("${ownerType}"))`
       )
     this.sectionButton = (buttonTitle) =>
@@ -30,20 +45,11 @@ exports.VehicleReportPage = class VehicleReportPage extends RekkariPage {
   }
 
   // Define method to open the page
-  async open() {
+  async open({ language = this.lang } = {}) {
     try {
-      await this.pageHeader().waitFor({ timeout: 1000 })
+      await this.pageHeader(language).waitFor({ timeout: 1000 })
     } catch (error) {
-      await this.page.goto(this.url)
-    }
-  }
-
-  // Define methods to interact with the elements on the page
-  async acceptCookies() {
-    try {
-      await this.acceptCookiesButton.click({ timeout: 3000 })
-    } catch (error) {
-      console.log('No cookies to accept')
+      await this.page.goto(this.url[language])
     }
   }
 }

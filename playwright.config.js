@@ -34,19 +34,70 @@ module.exports = defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] }
+      name: 'chromium-e2e-fi',
+      testMatch: '**/rekkari-e2e.spec.js',
+      use: { ...devices['Desktop Chrome'], language: 'fi' }
+    },
+
+    {
+      name: 'chromium-e2e-sv',
+      testMatch: '**/rekkari-e2e.spec.js',
+      use: { ...devices['Desktop Chrome'], language: 'sv' }
+    },
+
+    {
+      name: 'chromium-e2e-en',
+      testMatch: '**/rekkari-e2e.spec.js',
+      use: { ...devices['Desktop Chrome'], language: 'en' }
+    },
+
+    {
+      name: 'chromium-report-fi',
+      testMatch: '**/report-*.spec.js',
+      use: { ...devices['Desktop Chrome'], language: 'fi' }
+    },
+
+    {
+      name: 'chromium-report-sv',
+      testMatch: '**/report-*.spec.js',
+      use: { ...devices['Desktop Chrome'], language: 'sv' }
+    },
+
+    {
+      name: 'chromium-report-en',
+      testMatch: '**/report-*.spec.js',
+      use: { ...devices['Desktop Chrome'], language: 'en' }
+    },
+
+    {
+      name: 'firefox-fi',
+      use: { ...devices['Desktop Firefox'], language: 'fi' }
+    },
+
+    {
+      name: 'firefox-sv',
+      use: { ...devices['Desktop Firefox'], language: 'sv' }
+    },
+
+    {
+      name: 'firefox-en',
+      use: { ...devices['Desktop Firefox'], language: 'en' }
+    },
+
+    {
+      name: 'webkit-fi',
+      use: { ...devices['Desktop Safari'], language: 'fi' }
+    },
+
+    {
+      name: 'webkit-sv',
+      use: { ...devices['Desktop Safari'], language: 'sv' }
+    },
+
+    {
+      name: 'webkit-en',
+      use: { ...devices['Desktop Safari'], language: 'en' }
     }
-
-    // {
-    //   name: 'firefox',
-    //   use: { ...devices['Desktop Firefox'] },
-    // },
-
-    // {
-    //   name: 'webkit',
-    //   use: { ...devices['Desktop Safari'] },
-    // },
 
     /* Test against mobile viewports. */
     // {

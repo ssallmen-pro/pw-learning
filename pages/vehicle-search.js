@@ -6,8 +6,17 @@ exports.VehicleSearchPage = class VehicleSearchPage extends RekkariPage {
    */
   constructor(page) {
     super(page)
+    this.url = {
+      fi: 'https://02rekkari.fi/',
+      sv: 'https://02rekkari.fi/sv/',
+      en: 'https://02rekkari.fi/en/'
+    }
+    this.headerText = {
+      fi: 'Ajoneuvon tiedot nopeasti - tee rekisterinumerohaku',
+      sv: 'Fordonsuppgifter snabbt med en registernummersökning',
+      en: 'Vehicle details quickly with a registration number search'
+    }
     // Define locators for elements on the page
-    this.acceptCookiesButton = page.locator('#onetrust-accept-btn-handler')
     this.searchForRegId = page.getByPlaceholder('ABC-123')
     this.searchButton = page.locator('#search-submit')
     this.vehicleTypeButton = (type) => page.locator(`#search-${type}`)
@@ -15,7 +24,7 @@ exports.VehicleSearchPage = class VehicleSearchPage extends RekkariPage {
 
   // Define method to open the page
   async open() {
-    await this.page.goto(this.url)
+    await this.page.goto(this.url[this.lang])
   }
 
   // Define methods to interact with the elements on the page
