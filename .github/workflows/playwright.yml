@@ -5,6 +5,11 @@ on:
   pull_request:
     branches: [ main ]
   workflow_dispatch:
+    inputs:
+      project:
+        description: 'Playwright project to use for running the tests'
+        required: false
+        default: ''
 jobs:
   test:
     timeout-minutes: 60
@@ -18,7 +23,11 @@ jobs:
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
-    - name: Run Playwright tests
+    - name: Run Playwright tests (projects defined as input)
+      if: github.event.inputs.project != ''
+      run: npx playwright test --project ${{ github.event.inputs.project }}
+    - name: Run Playwright tests (all projects)
+      if: github.event.inputs.project == ''
       run: npx playwright test
     - uses: actions/upload-artifact@v4
       if: always()
