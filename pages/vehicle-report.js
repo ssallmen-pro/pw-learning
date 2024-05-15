@@ -1,16 +1,14 @@
-exports.VehicleReportPage = class VehicleReportPage {
+const { RekkariPage } = require('./rekkari-page')
+
+exports.VehicleReportPage = class VehicleReportPage extends RekkariPage {
   // class VehicleReportPage {
 
   /**
    * @param {import('@playwright/test').Page} page
    */
   constructor(page) {
-    this.page = page
-    this.url = 'https://02rekkari.fi/esimerkkiraportti/'
-    this.headerText = 'Esimerkkiraportti'
+    super(page)
     // Define locators for elements on the page
-    this.acceptCookiesButton = page.getByRole('button', { name: 'Accept All' })
-    this.pageHeader = page.locator('#page-header').getByText(this.headerText)
     this.registrationPlate = page.locator('#registration-plate').first()
     this.vehicleData = (fieldTitle) =>
       page

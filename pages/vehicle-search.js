@@ -1,10 +1,11 @@
-exports.VehicleSearchPage = class VehicleSearchPage {
+const { RekkariPage } = require('./rekkari-page')
+
+exports.VehicleSearchPage = class VehicleSearchPage extends RekkariPage {
   /**
    * @param {import('@playwright/test').Page} page
    */
   constructor(page) {
-    this.page = page
-    this.url = 'https://02rekkari.fi/'
+    super(page)
     // Define locators for elements on the page
     this.acceptCookiesButton = page.locator('#onetrust-accept-btn-handler')
     this.searchForRegId = page.getByPlaceholder('ABC-123')
@@ -18,14 +19,6 @@ exports.VehicleSearchPage = class VehicleSearchPage {
   }
 
   // Define methods to interact with the elements on the page
-  async acceptCookies() {
-    try {
-      await this.acceptCookiesButton.click({ timeout: 3000 })
-    } catch (error) {
-      console.log('No cookies to accept')
-    }
-  }
-
   async searchForVehicle(type, regId) {
     await this.searchForRegId.fill(regId)
     await this.vehicleTypeButton(type).click()

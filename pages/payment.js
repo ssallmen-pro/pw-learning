@@ -1,16 +1,14 @@
 const { expect } = require('@playwright/test')
-// const { expect } = require('../fixtures/rekkari-test')
+const { RekkariPage } = require('./rekkari-page')
 const { VehicleReportPage } = require('../pages/vehicle-report')
 
-exports.PaymentPage = class PaymentPage {
+exports.PaymentPage = class PaymentPage extends RekkariPage {
   /**
    * @param {import('@playwright/test').Page} page
    */
   constructor(page) {
-    this.page = page
+    super(page)
     // Define locators for elements on the page
-    this.acceptCookiesButton = page.locator('#onetrust-accept-btn-handler')
-    this.pageHeader = page.locator('h1')
     this.regPlate = page.locator('#registration-plate')
     this.bundleName = page.locator('#summary-bundle-title')
     this.bundlePrice = page.locator('#summary-bundle-price')
@@ -24,14 +22,6 @@ exports.PaymentPage = class PaymentPage {
   }
 
   // Define methods to interact with the elements on the page
-  async acceptCookies() {
-    try {
-      await this.acceptCookiesButton.click({ timeout: 3000 })
-    } catch (error) {
-      console.log('No cookies to accept')
-    }
-  }
-
   async openBundleInfo() {
     await this.showMoreButton.click()
   }
