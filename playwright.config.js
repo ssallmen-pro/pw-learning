@@ -28,7 +28,8 @@ module.exports = defineConfig({
     // baseURL: 'http://127.0.0.1:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry'
+    trace: 'on-first-retry',
+    screenshot: { mode: 'only-on-failure', fullPage: true }
   },
 
   /* Configure projects for major browsers */
@@ -66,7 +67,7 @@ module.exports = defineConfig({
     {
       name: 'chromium-report-en',
       testMatch: '**/report-*.spec.js',
-      use: { ...devices['Desktop Chrome'], language: 'en' }
+      use: { ...devices['Desktop Chrome'], language: 'en'}
     },
 
     {
