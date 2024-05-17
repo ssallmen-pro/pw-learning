@@ -40,7 +40,7 @@ jobs:
         path: playwright-report/
         retention-days: 30
     - name: Get Allure history # Step to retrieve Allure history
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       if: always() # Execute even if previous steps fail
       continue-on-error: true # Continue execution even if the step fails
       with:
