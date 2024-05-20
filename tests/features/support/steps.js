@@ -1,5 +1,5 @@
-const { expect } = require('@playwright/test')
-const { createBdd } = require('playwright-bdd')
+import { expect } from '@playwright/test'
+import { createBdd } from 'playwright-bdd'
 
 const { Given, When, Then } = createBdd()
 
