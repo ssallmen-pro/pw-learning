@@ -29,7 +29,8 @@ test('Check the owner data values', async ({ vehicleReportPage, language }) => {
   }
 
   test.skip(
-    ['sv', 'en'].includes(language),
+    // ['sv', 'en'].includes(language),
+    ['sv'].includes(language),
     `Skip the test for '${language}' language because of a bug in example report`
   )
   for (const { ownerType, ownerData } of testData[language]) {
