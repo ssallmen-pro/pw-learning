@@ -1,8 +1,8 @@
-const { expect } = require('@playwright/test')
-const { RekkariPage } = require('./rekkari-page')
-const { VehicleReportPage } = require('../pages/vehicle-report')
+import { expect } from '@playwright/test'
+import { RekkariPage } from './rekkari-page'
+import { VehicleReportPage } from '../pages/vehicle-report'
 
-exports.PaymentPage = class PaymentPage extends RekkariPage {
+class PaymentPage extends RekkariPage {
   /**
    * @param {import('@playwright/test').Page} page
    */
@@ -66,3 +66,5 @@ exports.PaymentPage = class PaymentPage extends RekkariPage {
     await new VehicleReportPage(this.page).open({ language: this.lang })
   }
 }
+
+export { PaymentPage }

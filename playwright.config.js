@@ -1,6 +1,6 @@
 // @ts-check
-const { defineConfig, devices } = require('@playwright/test')
-const { testPlanFilter } = require('allure-playwright/dist/testplan')
+import { defineConfig, devices } from '@playwright/test'
+import { testPlanFilter } from 'allure-playwright/dist/testplan'
 
 /**
  * Read environment variables from file.

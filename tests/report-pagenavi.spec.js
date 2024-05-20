@@ -1,4 +1,4 @@
-const { test, expect } = require('../fixtures/report-test')
+import { test, expect } from '../fixtures/report-test'
 
 test('Check the page title', async ({ vehicleReportPage }) => {
   await expect(vehicleReportPage.pageHeader()).toBeVisible()

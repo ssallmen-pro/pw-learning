@@ -1,6 +1,6 @@
-const { RekkariPage } = require('./rekkari-page')
+import { RekkariPage } from './rekkari-page'
 
-exports.VehicleReportPage = class VehicleReportPage extends RekkariPage {
+class VehicleReportPage extends RekkariPage {
   // class VehicleReportPage {
 
   /**
@@ -54,4 +54,4 @@ exports.VehicleReportPage = class VehicleReportPage extends RekkariPage {
   }
 }
 
-// export { VehicleReportPage };
+export { VehicleReportPage }

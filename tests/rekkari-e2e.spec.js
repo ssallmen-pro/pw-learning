@@ -1,6 +1,6 @@
-const { test, expect } = require('../fixtures/rekkari-test')
+import { test, expect } from '../fixtures/rekkari-test'
 
-test('Search motorcycle with reg number ABC123 and get full bundle', async ({
+test.slow('Search motorcycle with reg number ABC123 and get full bundle', async ({
   vehicleSearchPage,
   bundleSelectionPage,
   paymentPage,

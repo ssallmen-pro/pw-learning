@@ -1,11 +1,11 @@
-const base = require('@playwright/test')
-const { VehicleReportPage } = require('../pages/vehicle-report')
-const { VehicleSearchPage } = require('../pages/vehicle-search')
-const { BundleSelectionPage } = require('../pages/select-bundle')
-const { PaymentPage } = require('../pages/payment')
+import { test as base } from '@playwright/test'
+import { VehicleReportPage } from '../pages/vehicle-report'
+import { VehicleSearchPage } from '../pages/vehicle-search'
+import { BundleSelectionPage } from '../pages/select-bundle'
+import { PaymentPage } from '../pages/payment'
 
 // This new "test" can be used in multiple test files, and each of them will get the fixtures.
-exports.test = base.test.extend({
+const test = base.test.extend({
   language: ['fi', { option: true }],
   vehicleSearchPage: async ({ page, language }, use) => {
     // Set up the fixture.
@@ -39,4 +39,5 @@ exports.test = base.test.extend({
   }
 })
 
-exports.expect = base.expect
+export { test }
+export { expect } from '@playwright/test'

@@ -1,6 +1,6 @@
-const { RekkariPage } = require('./rekkari-page')
+import { RekkariPage } from './rekkari-page'
 
-exports.VehicleSearchPage = class VehicleSearchPage extends RekkariPage {
+class VehicleSearchPage extends RekkariPage {
   /**
    * @param {import('@playwright/test').Page} page
    */
@@ -34,3 +34,5 @@ exports.VehicleSearchPage = class VehicleSearchPage extends RekkariPage {
     await this.searchButton.click()
   }
 }
+
+export { VehicleSearchPage }

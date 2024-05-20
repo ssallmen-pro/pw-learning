@@ -1,6 +1,6 @@
-const { RekkariPage } = require('./rekkari-page')
+import { RekkariPage } from './rekkari-page'
 
-exports.BundleSelectionPage = class BundleSelectionPage extends RekkariPage {
+class BundleSelectionPage extends RekkariPage {
   /**
    * @param {import('@playwright/test').Page} page
    */
@@ -39,3 +39,5 @@ exports.BundleSelectionPage = class BundleSelectionPage extends RekkariPage {
     await this.bundleTypeButton(bundleType).click()
   }
 }
+
+export { BundleSelectionPage }

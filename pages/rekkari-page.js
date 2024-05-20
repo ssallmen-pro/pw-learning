@@ -1,4 +1,4 @@
-exports.RekkariPage = class RekkariPage {
+class RekkariPage {
   /**
    * @param {import('@playwright/test').Page} page
    */
@@ -48,3 +48,5 @@ exports.RekkariPage = class RekkariPage {
     }
   }
 }
+
+export { RekkariPage }
