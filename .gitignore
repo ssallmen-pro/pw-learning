@@ -5,4 +5,7 @@ node_modules/
 /playwright/.cache/
 
 # Allure Report
-/allure-results/
+allure-results/
+
+# Playwright BDD
+.features-gen/

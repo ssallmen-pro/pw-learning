@@ -1,12 +1,18 @@
 // @ts-check
 const { defineConfig, devices } = require('@playwright/test')
 const { testPlanFilter } = require('allure-playwright/dist/testplan')
+const { defineBddConfig } = require('playwright-bdd')
 
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
 // require('dotenv').config();
+
+const bddTestDir = defineBddConfig({
+  paths: ['tests/features/sample.feature'],
+  require: ['tests/features/support/steps.js']
+})
 
 /**
  * @see https://playwright.dev/docs/test-configuration
@@ -36,6 +42,12 @@ module.exports = defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
+    {
+      name: 'chromium-bdd-fi',
+      testDir: bddTestDir,
+      use: { ...devices['Desktop Chrome'] }
+    },
+
     {
       name: 'chromium-e2e-fi',
       testMatch: '**/rekkari-e2e.spec.js',
