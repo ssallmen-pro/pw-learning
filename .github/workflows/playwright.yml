@@ -38,7 +38,7 @@ jobs:
       if: github.event.inputs.project == ''
       run: npx playwright test --project chromium-report-fi --project chromium-report-en
     - name: Remove network log files from Playwright trace files
-      run: for zipfile in /win_temp/data/*.zip; do zip -d "$zipfile" 0-trace.network; done
+      run: for zipfile in playwright-report/data/*.zip; do zip -d "$zipfile" 0-trace.network; done
     - uses: actions/upload-artifact@v4
       if: always()
       with:
