@@ -1,12 +1,14 @@
 import { test, expect } from '../fixtures/rekkari-test'
 
-test.slow('Search motorcycle with reg number ABC123 and get full bundle', async ({
+test('Search motorcycle with reg number ABC123 and get full bundle', async ({
   vehicleSearchPage,
   bundleSelectionPage,
   paymentPage,
   vehicleReportPage,
-  language
+  language,
+  browserName
 }) => {
+  test.slow(browserName === 'webkit', 'This feature is slow in Safari')
   await test.step('Open the main page and accept cookies', async () => {
     await vehicleSearchPage.open()
     await expect(await vehicleSearchPage.isOpen()).toEqual(true)
