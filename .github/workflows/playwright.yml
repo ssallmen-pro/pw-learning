@@ -23,6 +23,10 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         node-version: lts/*
+    - name: Install zip
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y zip
     - name: Install dependencies
       run: npm ci
     - name: Install Playwright Browsers
@@ -33,6 +37,8 @@ jobs:
     - name: Run Playwright tests (all projects)
       if: github.event.inputs.project == ''
       run: npx playwright test --project chromium-report-fi --project chromium-report-en
+    - name: Remove network log files from Playwright trace files
+      run: for zipfile in /win_temp/data/*.zip; do zip -d "$zipfile" 0-trace.network; done
     - uses: actions/upload-artifact@v4
       if: always()
       with:
