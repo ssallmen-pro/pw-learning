@@ -29,8 +29,8 @@ module.exports = defineConfig({
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
 
-    /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'off',
+    /* Retain trace only for failed test. See https://playwright.dev/docs/trace-viewer */
+    trace: 'retain-on-failure',
     screenshot: { mode: 'only-on-failure', fullPage: true }
   },
 
