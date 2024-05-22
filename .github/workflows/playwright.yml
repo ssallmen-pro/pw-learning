@@ -36,7 +36,7 @@ jobs:
       run: npx playwright test --project ${{ github.event.inputs.project }}
     - name: Run Playwright tests (all projects)
       if: github.event.inputs.project == ''
-      run: npx playwright test --project chromium-report-fi --project chromium-report-en
+      run: npx playwright test
     - name: Remove network trace files from Playwright traces
       if: always()
       run: for zipfile in playwright-report/data/*.zip; do zip -d "$zipfile" 0-trace.network; done || true
