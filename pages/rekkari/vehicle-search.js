@@ -12,9 +12,9 @@ class VehicleSearchPage extends RekkariPage {
       en: 'https://02rekkari.fi/en/'
     }
     this.headerText = {
-      fi: 'Ajoneuvon tiedot nopeasti - tee rekisterinumerohaku',
-      sv: 'Fordonsuppgifter snabbt med en registernummersökning',
-      en: 'Vehicle details quickly with a registration number search'
+      fi: 'Ajoneuvon ja veneen tiedot nopeasti rekisterinumerohaulla',
+      sv: 'Fordons- och farkostuppgifter snabbt med en registernummersökning',
+      en: 'Vehicle and boat details quickly with a registration number search'
     }
     // Define locators for elements on the page
     this.searchForRegId = page.getByPlaceholder('ABC-123')

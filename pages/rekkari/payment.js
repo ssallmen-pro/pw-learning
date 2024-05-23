@@ -1,6 +1,6 @@
 import { expect } from '@playwright/test'
 import { RekkariPage } from './rekkari-page'
-import { VehicleReportPage } from '../pages/vehicle-report'
+import { VehicleReportPage } from './vehicle-report'
 
 class PaymentPage extends RekkariPage {
   /**

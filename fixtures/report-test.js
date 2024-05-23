@@ -1,5 +1,5 @@
 import { test as base } from '@playwright/test'
-import { VehicleReportPage } from '../pages/vehicle-report'
+import { VehicleReportPage } from '../pages/rekkari/vehicle-report'
 
 // This new "test" can be used in multiple test files, and each of them will get the fixtures.
 const test = base.test.extend({

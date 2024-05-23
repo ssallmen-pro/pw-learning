@@ -1,4 +1,4 @@
-import { test, expect } from '../fixtures/report-test'
+import { test, expect } from '../../fixtures/report-test'
 
 test('Check the owner data values', async ({ vehicleReportPage, language }) => {
   const testData = {

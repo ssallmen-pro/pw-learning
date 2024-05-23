@@ -1,4 +1,4 @@
-import { test, expect } from '../fixtures/rekkari-test'
+import { test, expect } from '../../fixtures/rekkari-test'
 
 test('Search motorcycle with reg number ABC123 and get full bundle', async ({
   vehicleSearchPage,

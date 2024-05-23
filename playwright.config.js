@@ -37,68 +37,74 @@ module.exports = defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium-e2e-fi',
-      testMatch: '**/rekkari-e2e.spec.js',
+      name: 'rekkari-chromium-e2e-fi',
+      testMatch: 'rekkari/e2e.spec.js',
       use: { ...devices['Desktop Chrome'], language: 'fi' }
     },
 
     {
-      name: 'chromium-e2e-sv',
-      testMatch: '**/rekkari-e2e.spec.js',
+      name: 'rekkari-chromium-e2e-sv',
+      testMatch: 'rekkari/e2e.spec.js',
       use: { ...devices['Desktop Chrome'], language: 'sv' }
     },
 
     {
-      name: 'chromium-e2e-en',
-      testMatch: '**/rekkari-e2e.spec.js',
+      name: 'rekkari-chromium-e2e-en',
+      testMatch: 'rekkari/e2e.spec.js',
       use: { ...devices['Desktop Chrome'], language: 'en' }
     },
 
     {
-      name: 'chromium-report-fi',
-      testMatch: '**/report-*.spec.js',
+      name: 'rekkari-chromium-report-fi',
+      testMatch: 'rekkari/report-*.spec.js',
       use: { ...devices['Desktop Chrome'], language: 'fi' }
     },
 
     {
-      name: 'chromium-report-sv',
-      testMatch: '**/report-*.spec.js',
+      name: 'rekkari-chromium-report-sv',
+      testMatch: 'rekkari/report-*.spec.js',
       use: { ...devices['Desktop Chrome'], language: 'sv' }
     },
 
     {
-      name: 'chromium-report-en',
-      testMatch: '**/report-*.spec.js',
-      use: { ...devices['Desktop Chrome'], language: 'en'}
+      name: 'rekkari-chromium-report-en',
+      testMatch: 'rekkari/report-*.spec.js',
+      use: { ...devices['Desktop Chrome'], language: 'en' }
     },
 
     {
-      name: 'firefox-fi',
+      name: 'rekkari-firefox-fi',
+      testMatch: 'rekkari/*.spec.js',
       use: { ...devices['Desktop Firefox'], language: 'fi' }
     },
 
     {
-      name: 'firefox-sv',
+      name: 'rekkari-firefox-sv',
+      testMatch: 'rekkari/*.spec.js',
       use: { ...devices['Desktop Firefox'], language: 'sv' }
     },
 
     {
-      name: 'firefox-en',
+      name: 'rekkari-firefox-en',
+      testMatch: 'rekkari/*.spec.js',
       use: { ...devices['Desktop Firefox'], language: 'en' }
     },
 
     {
-      name: 'webkit-fi',
+      name: 'rekkari-webkit-fi',
+      testMatch: 'rekkari/*.spec.js',
       use: { ...devices['Desktop Safari'], language: 'fi' }
     },
 
     {
-      name: 'webkit-sv',
+      name: 'rekkari-webkit-sv',
+      testMatch: 'rekkari/*.spec.js',
       use: { ...devices['Desktop Safari'], language: 'sv' }
     },
 
     {
-      name: 'webkit-en',
+      name: 'rekkari-webkit-en',
+      testMatch: 'rekkari/*.spec.js',
       use: { ...devices['Desktop Safari'], language: 'en' }
     }
 
