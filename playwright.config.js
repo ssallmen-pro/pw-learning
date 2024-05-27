@@ -27,7 +27,7 @@ module.exports = defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    // baseURL: 'http://127.0.0.1:3000',
+    baseURL: 'https://www.alko.fi',
 
     /* Retain trace only for failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'retain-on-failure',
@@ -39,132 +39,72 @@ module.exports = defineConfig({
     {
       name: 'alko-chromium-data-fi',
       testMatch: 'alko/product-data.spec.js',
-      use: {
-        ...devices['Desktop Chrome'],
-        baseURL: 'https://www.alko.fi',
-        language: 'fi'
-      }
+      use: { ...devices['Desktop Chrome'], language: 'fi' }
     },
 
     {
       name: 'alko-chromium-data-sv',
       testMatch: 'alko/product-data.spec.js',
-      use: {
-        ...devices['Desktop Chrome'],
-        baseURL: 'https://www.alko.fi',
-        language: 'sv'
-      }
+      use: { ...devices['Desktop Chrome'], language: 'sv' }
     },
 
     {
       name: 'alko-chromium-data-en',
       testMatch: 'alko/product-data.spec.js',
-      use: {
-        ...devices['Desktop Chrome'],
-        baseURL: 'https://www.alko.fi',
-        language: 'en'
-      }
+      use: { ...devices['Desktop Chrome'], language: 'en' }
     },
 
     {
       name: 'alko-chromium-e2e-fi',
       testMatch: 'alko/e2e.spec.js',
-      use: {
-        ...devices['Desktop Chrome'],
-        baseURL: 'https://www.alko.fi',
-        language: 'fi'
-      }
+      use: { ...devices['Desktop Chrome'], language: 'fi' }
     },
 
     {
       name: 'alko-chromium-e2e-sv',
       testMatch: 'alko/e2e.spec.js',
-      use: {
-        ...devices['Desktop Chrome'],
-        baseURL: 'https://www.alko.fi',
-        language: 'sv'
-      }
+      use: { ...devices['Desktop Chrome'], language: 'sv' }
     },
 
     {
       name: 'alko-chromium-e2e-en',
       testMatch: 'alko/e2e.spec.js',
-      use: {
-        ...devices['Desktop Chrome'],
-        baseURL: 'https://www.alko.fi',
-        language: 'en'
-      }
-    },
-
-    {
-      name: 'rekkari-chromium-e2e-fi',
-      testMatch: 'rekkari/e2e.spec.js',
-      use: { ...devices['Desktop Chrome'], language: 'fi' }
-    },
-
-    {
-      name: 'rekkari-chromium-e2e-sv',
-      testMatch: 'rekkari/e2e.spec.js',
-      use: { ...devices['Desktop Chrome'], language: 'sv' }
-    },
-
-    {
-      name: 'rekkari-chromium-e2e-en',
-      testMatch: 'rekkari/e2e.spec.js',
       use: { ...devices['Desktop Chrome'], language: 'en' }
     },
 
     {
-      name: 'rekkari-chromium-report-fi',
-      testMatch: 'rekkari/report-*.spec.js',
-      use: { ...devices['Desktop Chrome'], language: 'fi' }
-    },
-
-    {
-      name: 'rekkari-chromium-report-sv',
-      testMatch: 'rekkari/report-*.spec.js',
-      use: { ...devices['Desktop Chrome'], language: 'sv' }
-    },
-
-    {
-      name: 'rekkari-chromium-report-en',
-      testMatch: 'rekkari/report-*.spec.js',
-      use: { ...devices['Desktop Chrome'], language: 'en' }
-    },
-
-    {
-      name: 'rekkari-firefox-fi',
-      testMatch: 'rekkari/*.spec.js',
+      name: 'alko-firefox-fi',
+      testMatch: 'alko/*.spec.js',
       use: { ...devices['Desktop Firefox'], language: 'fi' }
     },
 
     {
-      name: 'rekkari-firefox-sv',
-      testMatch: 'rekkari/*.spec.js',
+      name: 'alko-firefox-sv',
+      testMatch: 'alko/*.spec.js',
       use: { ...devices['Desktop Firefox'], language: 'sv' }
     },
 
     {
-      name: 'rekkari-firefox-en',
-      testMatch: 'rekkari/*.spec.js',
+      name: 'alko-firefox-en',
+      testMatch: 'alko/*.spec.js',
       use: { ...devices['Desktop Firefox'], language: 'en' }
     },
 
     {
-      name: 'rekkari-webkit-fi',
-      testMatch: 'rekkari/*.spec.js',
+      name: 'alko-webkit-fi',
+      testMatch: 'alko/*.spec.js',
       use: { ...devices['Desktop Safari'], language: 'fi' }
     },
 
     {
-      name: 'rekkari-webkit-sv',
-      testMatch: 'rekkari/*.spec.js',
+      name: 'alko-webkit-sv',
+      testMatch: 'alko/*.spec.js',
       use: { ...devices['Desktop Safari'], language: 'sv' }
     },
 
     {
-      name: 'rekkari-webkit-en',
-      testMatch: 'rekkari/*.spec.js',
+      name: 'alko-webkit-en',
+      testMatch: 'alko/*.spec.js',
       use: { ...devices['Desktop Safari'], language: 'en' }
     }
 
