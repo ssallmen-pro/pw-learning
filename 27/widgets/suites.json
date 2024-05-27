@@ -1,1 +1,0 @@
-{"total":2,"items":[{"uid":"9eecf8045f7e6672f595bfbd4e704ab8","name":"chromium-report-fi","statistic":{"failed":0,"broken":0,"skipped":0,"passed":5,"unknown":0,"total":5}},{"uid":"e2136019ba7ba9d6cc020221602c22ec","name":"chromium-report-en","statistic":{"failed":0,"broken":0,"skipped":1,"passed":4,"unknown":0,"total":5}}]}
