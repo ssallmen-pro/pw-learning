@@ -37,6 +37,66 @@ module.exports = defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
+      name: 'alko-chromium-data-fi',
+      testMatch: 'alko/product-data.spec.js',
+      use: {
+        ...devices['Desktop Chrome'],
+        baseURL: 'https://www.alko.fi',
+        language: 'fi'
+      }
+    },
+
+    {
+      name: 'alko-chromium-data-sv',
+      testMatch: 'alko/product-data.spec.js',
+      use: {
+        ...devices['Desktop Chrome'],
+        baseURL: 'https://www.alko.fi',
+        language: 'sv'
+      }
+    },
+
+    {
+      name: 'alko-chromium-data-en',
+      testMatch: 'alko/product-data.spec.js',
+      use: {
+        ...devices['Desktop Chrome'],
+        baseURL: 'https://www.alko.fi',
+        language: 'en'
+      }
+    },
+
+    {
+      name: 'alko-chromium-e2e-fi',
+      testMatch: 'alko/e2e.spec.js',
+      use: {
+        ...devices['Desktop Chrome'],
+        baseURL: 'https://www.alko.fi',
+        language: 'fi'
+      }
+    },
+
+    {
+      name: 'alko-chromium-e2e-sv',
+      testMatch: 'alko/e2e.spec.js',
+      use: {
+        ...devices['Desktop Chrome'],
+        baseURL: 'https://www.alko.fi',
+        language: 'sv'
+      }
+    },
+
+    {
+      name: 'alko-chromium-e2e-en',
+      testMatch: 'alko/e2e.spec.js',
+      use: {
+        ...devices['Desktop Chrome'],
+        baseURL: 'https://www.alko.fi',
+        language: 'en'
+      }
+    },
+
+    {
       name: 'rekkari-chromium-e2e-fi',
       testMatch: 'rekkari/e2e.spec.js',
       use: { ...devices['Desktop Chrome'], language: 'fi' }
